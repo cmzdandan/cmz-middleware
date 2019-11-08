@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: cmz-acvitemq-springboot
+Implementation-Version: 1.0.0
+Built-By: Administrator
+Implementation-Vendor-Id: com.cmz
+Build-Jdk: 1.8.0_51
+Implementation-URL: http://projects.spring.io/spring-boot/cmz-acvitemq
+ -springboot/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

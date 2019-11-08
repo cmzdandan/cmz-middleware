@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  kafka:
+    bootstrap-servers: 10.0.30.91:9091,10.0.30.91:9092,10.0.30.91:9093 # 指定kafka 代理地址，可以多个
+    template:
+      default-topic: cmz-kafka-topic # 指定默认topic id
+    listener:
+      concurrency: 5 # 指定listener 容器中的线程数，用于提高并发量
+    producer:
+      batch-size: 1000 # 每次批量发送消息的数量
+      retries: 3
+      client-id: 200
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer # 指定key的解码方式
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer # 指定消息体的解码方式
+    consumer:
+      group-id: cmz-consumer-group-test # 指定默认消费者group id
+      client-id: 200
+      max-poll-records: 200
+      auto-offset-reset: earliest # 最早未被消费的offset
+      enable-auto-commit: true
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer # 指定key的编码方式
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer # 指定消息体的编码方式
